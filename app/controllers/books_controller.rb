@@ -53,16 +53,16 @@ end
  
    
   def edit
-   @book = Book.find params[:id]
+    @book = Book.find params[:id]
   end
- 
+
   def update
    @book = Book.find params[:id]
-   params.require(:book)
-   permitted = params[:book].permit(:title,:genre,:description,:publish_date,:author)
-   @book.update_attributes!(permitted)
-   flash[:notice] = "#{@book.title} was successfully updated."
-   redirect_to book_path(@book)
+    params.require(:book)
+    permitted = params[:book].permit(:title,:genre,:publish_date,:isbn,:description,:author)
+    @book.update_attributes!(permitted)
+    flash[:notice] = "#{@book.title} was successfully updated."
+    redirect_to book_path(@book)
   end
   
   def destroy

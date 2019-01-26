@@ -9,16 +9,19 @@
           %li= error
           
   = label :book, :title, 'Title'
-  = text_field :book, :title
-  
+  = text_field :book, 'title'
+
   = label :book, :genre, 'Genre'
-  = select :book, :genre, ['Science Fiction', 'Drama', 'Action and Adventure', 'Romance', 'Mystery', 'Horror']
- 
-  = label :description, :title, 'Description'
-  = text_field :book, :description
+  = select :book, :genre, ['Action and Adventure','Science fiction','Drama','Horror','Romance', 'Mystery']
  
   = label :book, :publish_date, 'Published On'
-  = date_select :book, :publish_date
+  = date_select :book, :publish_date, { start_year: 100.years.ago.year, end_year: Date.today.year, default: Date.today}
+  
+  = label :book, :isbn, 'ISBN'
+  = text_field :book, :isbn
+  
+  = label :book, :description, 'Description'
+  = text_field :book, :description
   
   = label :book, :author, 'Author'
   = text_field :book, 'author'
