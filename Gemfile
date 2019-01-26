@@ -76,3 +76,9 @@ group :test do
   gem 'chromedriver-helper'
   gem 'launchy'          # a useful debugging aid for user stories
 end
+
+group :test do
+ gem 'rspec-rails'
+ gem 'rails-controller-testing'
+ gem 'factory_bot_rails'
+end
